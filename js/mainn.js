@@ -76,36 +76,9 @@ $(window).resize(function () {
   });
 
 
-  //slide
-  $('.tab_title2').on('click', 'button', function () {
-    var filterValue = $(this).attr('data-filter');
-    // use filterFn if matches value
 
-    $grid.isotope({ filter: filterValue });
-  });
 
-  $('.tab_title2').each(function (tab, a) {
-    var $t = $(a);
-
-    $t.on('click', 'button', function () {
-      var idValue = $(this).attr('data-tab');
-      $t.find('.is-checked').removeClass('is-checked');
-      $(this).addClass('is-checked');
-      $('.t4s_content_3').each(function (btn, b) {
-        var $slide = $(b);
-        $slide.find('.tb-show').removeClass('tb-show')
-        if ($slide.find(`.${idValue}`)) {
-          let $idValue = $slide.find(`.${idValue}`);
-          $idValue.addClass('tb-show');
-          //console.log($slide.find(`.${idValue}`))
-          if ( $idValue.hasClass('flickity-enabled') ) {
-            $idValue.flickity('resize');
-          }
-          //   $slide.addClass('tb-show').removeClass('tb-hidden');
-        }
-      });
-    });
-  });
+  
 
   $('.t4s_tab_links2').click(function (e) {
     e.preventDefault();
